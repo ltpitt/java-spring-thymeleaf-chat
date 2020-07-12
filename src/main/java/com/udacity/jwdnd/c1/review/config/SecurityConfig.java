@@ -24,22 +24,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/").permitAll()
-                .and()
-                .authorizeRequests().antMatchers("/h2-console/**").permitAll()
-                .and()
-                .headers().frameOptions().disable()
-                .and()
-                .csrf().ignoringAntMatchers("/h2-console/**")
-                .and()
-                .cors().disable();
+        http.authorizeRequests()
+                .antMatchers("/signup", "/css/**", "/js/**").permitAll()
+                .anyRequest().authenticated();
 
-// Disabled security
-//        http.authorizeRequests()
-//                .antMatchers("/signup", "/css/**", "/js/**").permitAll()
-//                .anyRequest().authenticated();
-//
-//
+
         http.formLogin()
                 .loginPage("/login")
                 .permitAll();
@@ -47,6 +36,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.formLogin()
                 .defaultSuccessUrl("/chat", true);
     }
-
 
 }
