@@ -37,7 +37,7 @@ class ChatApplicationTests {
 
     @BeforeEach
     public void beforeEach() {
-        baseURL = baseURL = "http://localhost:" + port;
+        baseURL = "http://localhost:" + port;
     }
 
     @Test
