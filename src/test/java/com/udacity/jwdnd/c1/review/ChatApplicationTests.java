@@ -1,5 +1,7 @@
 package com.udacity.jwdnd.c1.review;
 
+import com.udacity.jwdnd.c1.review.model.ChatMessage;
+import com.udacity.jwdnd.c1.review.page.ChatPage;
 import com.udacity.jwdnd.c1.review.page.LoginPage;
 import com.udacity.jwdnd.c1.review.page.SignUpPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -14,65 +16,54 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class ChatApplicationTests {
-    private static WebDriver driver;
-    @LocalServerPort
-    private Integer port;
-    private LoginPage loginPage;
-    private final String username1 = "user1";
-    private final String password1 = "password1";
-    private final String firstName1 = "firstName1";
-    private final String lastName1 = "lastName1";
-    private final String username2 = "user2";
-    private final String password2 = "password2";
-    private final String firstName2 = "firstName2";
-    private final String lastName2 = "lastName2";
-    private SignUpPage signUpPage;
 
+    public static WebDriver driver;
+    @LocalServerPort
+    public int port;
+    public String baseURL;
 
     @BeforeAll
     public static void beforeAll() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+
     }
 
     @AfterAll
     public static void afterAll() {
         driver.quit();
+        driver = null;
     }
 
     @BeforeEach
     public void beforeEach() {
-
+        baseURL = baseURL = "http://localhost:" + port;
     }
 
     @Test
-    @Order(1)
-    public void testSignUp() throws InterruptedException {
-        driver.get("http://localhost:" + port + "/signup");
-        signUpPage = new SignUpPage(driver);
-        signUpPage.signUp(firstName1, lastName1, username1, password1);
-        assertEquals("You successfully signed up! Please continue to the login page.", signUpPage.getSuccessMessage().getText());
-    }
+    public void testUserSignupLoginAndSubmitMessage() {
+        String username = "username1";
+        String password = "password1";
+        String messageText = "Hello!";
 
-    @Test
-    @Order(2)
-    public void testLogin() throws InterruptedException {
-        driver.get("http://localhost:" + port + "/login");
-        loginPage = new LoginPage(driver);
-        loginPage.login(username1, password1);
-        Thread.sleep(5000);
-        assertEquals(1, 1);
-    }
+        driver.get(baseURL + "/signup");
 
-    @Test
-    @Order(3)
-    public void testChat() throws InterruptedException {
-        driver.get("http://localhost:" + port + "/chat");
-        loginPage = new LoginPage(driver);
-        loginPage.login(username1, password1);
-        Thread.sleep(5000);
-        assertEquals(1, 1);
-    }
+        SignUpPage signupPage = new SignUpPage(driver);
+        signupPage.signUp("User", "1", username, password);
 
+        driver.get(baseURL + "/login");
+
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login(username, password);
+
+        ChatPage chatPage = new ChatPage(driver);
+        chatPage.sendChatMessage(messageText);
+
+        ChatMessage sentMessage = chatPage.getFirstMessage();
+
+        assertEquals(username, sentMessage.getUsername());
+        assertEquals(messageText, sentMessage.getMessageText());
+
+    }
 
 }

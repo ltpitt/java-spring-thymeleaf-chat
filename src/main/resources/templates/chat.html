@@ -8,7 +8,7 @@
     <title>Chat</title>
 </head>
 <body>
-<a href="/logout">Logout</a>
+<a href="/logout" id="logout-link">Logout</a>
 <form th:object="${chatForm}" action="#" th:action="@{/chat}" method="POST">
     <label for="messageText">Message Text:</label>
     <input id="messageText" type="text" th:field="*{messageText}">
@@ -22,11 +22,11 @@
             Say
         </option>
     </select>
-    <input type="submit">
+    <input id="submit-button" type="submit">
 </form>
 <div th:each="chatMessage : ${chatMessages}">
-    <span th:text="${chatMessage.username}">Username</span>: <span
-        th:text="${chatMessage.messageText}">Hello, world!</span>
+    <span class="chatMessageUsername" th:text="${chatMessage.username}">Username</span>: <span class="chatMessageText"
+                                                                                               th:text="${chatMessage.messageText}">Hello, world!</span>
 </div>
 </body>
 </html>
