@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .deleteCookies("JSESSIONID");
 
         http.authorizeRequests()
-                .antMatchers("/signup", "/css/**", "/js/**", "/logout").permitAll()
+                .antMatchers("/css/**", "/js/**", "/signup", "/logout").permitAll()
                 .anyRequest().authenticated();
 
         http.formLogin()
