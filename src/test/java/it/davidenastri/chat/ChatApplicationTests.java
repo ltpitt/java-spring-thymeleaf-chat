@@ -41,7 +41,7 @@ class ChatApplicationTests {
     }
 
     @Test
-    public void testUserSignupLoginAndSubmitMessage() throws InterruptedException {
+    public void testUserSignupLoginAndSubmitMessage() {
         String username = "username1";
         String password = "password1";
         String messageText = "Hello!";
@@ -60,8 +60,6 @@ class ChatApplicationTests {
         chatPage.sendChatMessage(messageText);
 
         ChatMessage sentMessage = chatPage.getFirstMessage();
-
-        Thread.sleep(50000);
 
         assertEquals(username, sentMessage.getUsername());
         assertEquals(messageText, sentMessage.getMessageText());
