@@ -2,7 +2,6 @@ package it.davidenastri.chat.controller;
 
 import it.davidenastri.chat.model.ChatForm;
 import it.davidenastri.chat.service.MessageService;
-import it.davidenastri.chat.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +17,7 @@ public class ChatController {
 
     private MessageService messageService;
 
-    public ChatController(UserService userService, MessageService messageService) {
+    public ChatController(MessageService messageService) {
         this.messageService = messageService;
     }
 
