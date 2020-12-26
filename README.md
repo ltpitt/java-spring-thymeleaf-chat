@@ -1,8 +1,8 @@
-[![build](https://github.com/ltpitt/java-spring-cloud-drive/workflows/build/badge.svg)](https://github.com/ltpitt/java-spring-cloud-drive/actions)
-[![GitHub Issues](https://img.shields.io/github/issues-raw/ltpitt/java-spring-cloud-drive)](https://github.com/ltpitt/java-spring-cloud-drive/issues)
-[![Total Commits](https://img.shields.io/github/last-commit/ltpitt/java-spring-cloud-drive)](https://github.com/ltpitt/java-spring-cloud-drive/commits)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/4w/ltpitt/java-spring-cloud-drive?foo=bar)](https://github.com/ltpitt/java-spring-cloud-drive/commits)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ltpitt/java-spring-cloud-drive/blob/master/LICENSE)
+[![build](https://github.com/ltpitt/java-spring-thymeleaf-chat/workflows/build/badge.svg)](https://github.com/ltpitt/java-spring-thymeleaf-chat/actions)
+[![GitHub Issues](https://img.shields.io/github/issues-raw/ltpitt/java-spring-thymeleaf-chat)](https://github.com/ltpitt/java-spring-thymeleaf-chat/issues)
+[![Total Commits](https://img.shields.io/github/last-commit/ltpitt/java-spring-thymeleaf-chat)](https://github.com/ltpitt/java-spring-thymeleaf-chat/commits)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/4w/ltpitt/java-spring-thymeleaf-chat?foo=bar)](https://github.com/ltpitt/java-spring-thymeleaf-chat/commits)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ltpitt/java-spring-thymeleaf-chat/blob/master/LICENSE)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
 # Java Spring Thymeleaf Chat
