@@ -8,6 +8,7 @@ import it.davidenastri.chat.page.SignUpPage;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
@@ -25,8 +26,9 @@ class ChatApplicationTests {
     @BeforeAll
     public static void beforeAll() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200", "--ignore-certificate-errors");
+        driver = new ChromeDriver(options);
     }
 
     @AfterAll
