@@ -20,9 +20,11 @@ public class HashService {
     public String getHashedValue(String data, String salt) {
         byte[] hashedValue = null;
 
-        KeySpec spec = new PBEKeySpec(data.toCharArray(), salt.getBytes(), 5000, 128);
+        int iterCount = 12288;
+        int derivedKeyLength = 256;
+        KeySpec spec = new PBEKeySpec(data.toCharArray(), salt.getBytes(), iterCount, derivedKeyLength * 8);
         try {
-            SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+            SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
             hashedValue = factory.generateSecret(spec).getEncoded();
         } catch (InvalidKeySpecException | NoSuchAlgorithmException e) {
             logger.error(e.getMessage());
