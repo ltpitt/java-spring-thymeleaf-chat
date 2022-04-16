@@ -33,7 +33,7 @@ public class ChatController {
         this.messageService.addMessage(chatForm);
         chatForm.setMessageText("");
         model.addAttribute("chatMessages", this.messageService.getChatMessages());
-        return "chat";
+        return "redirect:/chat";
     }
 
     @ModelAttribute("allMessageTypes")
