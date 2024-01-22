@@ -8,11 +8,11 @@
 		<version>2.7.15</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.udacity.jwdnd.c1</groupId>
-	<artifactId>review</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>it.davidenastri</groupId>
+	<artifactId>chat</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>review</name>
-	<description>Demo project for Spring Boot</description>
+	<description>A Java Spring Boot chat, using Thymeleaf and MyBatis</description>
 
 	<properties>
 		<java.version>14</java.version>
@@ -25,7 +25,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
-			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
+			<artifactId>thymeleaf-extras-springsecurity6</artifactId>
+			<version>3.1.2.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
