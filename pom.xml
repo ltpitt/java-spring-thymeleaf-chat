@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.15</version>
+		<version>3.0.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>it.davidenastri</groupId>
@@ -15,7 +15,7 @@
 	<description>A Java Spring Boot chat, using Thymeleaf and MyBatis</description>
 
 	<properties>
-		<java.version>14</java.version>
+		<java.version>17</java.version>
 	</properties>
 
 	<dependencies>
@@ -37,9 +37,14 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>2.1.2</version>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.5.2</version> <!-- Use the appropriate version -->
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>2.0.2</version> <!-- Use the appropriate version -->
 		</dependency>
 
 		<dependency>
@@ -73,19 +78,19 @@
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>5.5.3</version>
+			<version>5.6.3</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.12.1</version>
+			<version>4.16.1</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.httpcomponents.client5</groupId>
 			<artifactId>httpclient5</artifactId>
-			<version>5.2.1</version>
+			<version>5.3</version>
 			<scope>test</scope>
 		</dependency>
 
