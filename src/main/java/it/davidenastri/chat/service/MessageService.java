@@ -5,22 +5,12 @@ import it.davidenastri.chat.model.ChatForm;
 import it.davidenastri.chat.model.ChatMessage;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class MessageService {
 
-    private MessageMapper messageMapper;
-
-    private List<ChatMessage> chatMessages;
-
-    @PostConstruct
-    public void postConstruct() {
-        System.out.println("Creating MessageService bean");
-        this.chatMessages = new ArrayList<>();
-    }
+    private final MessageMapper messageMapper;
 
     public MessageService(MessageMapper messageMapper) {
         this.messageMapper = messageMapper;
@@ -33,6 +23,7 @@ public class MessageService {
             case "Say" -> newMessage.setMessageText(chatForm.getMessageText());
             case "Shout" -> newMessage.setMessageText(chatForm.getMessageText().toUpperCase());
             case "Whisper" -> newMessage.setMessageText(chatForm.getMessageText().toLowerCase());
+            default -> newMessage.setMessageText("Invalid message type. Please choose among: Say / Shout / Whisper.");
         }
         messageMapper.insert(newMessage);
     }
