@@ -15,7 +15,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.boot.test.web.server.LocalServerPort;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -48,7 +48,7 @@ class ChatApplicationTests {
     }
 
     @Test
-    public void testUserSignupLoginAndSubmitMessage() {
+    void testUserSignupLoginAndSubmitMessage() {
         String username = "username1";
         String password = "password1";
         String messageText = "Hello!";
