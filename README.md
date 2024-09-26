@@ -1,4 +1,4 @@
-[![build](https://github.com/ltpitt/java-spring-thymeleaf-chat/workflows/build/badge.svg)](https://github.com/ltpitt/java-spring-thymeleaf-chat/actions)
+[![CI](https://github.com/ltpitt/java-spring-thymeleaf-chat/workflows/CI/badge.svg)](https://github.com/ltpitt/java-spring-thymeleaf-chat/actions)
 [![CodeQL](https://github.com/ltpitt/java-spring-thymeleaf-chat/workflows/CodeQL/badge.svg)](https://github.com/ltpitt/java-spring-thymeleaf-chat/actions?query=workflow%3ACodeQL)
 [![GitHub Issues](https://img.shields.io/github/issues-raw/ltpitt/java-spring-thymeleaf-chat)](https://github.com/ltpitt/java-spring-thymeleaf-chat/issues)
 [![Total Commits](https://img.shields.io/github/last-commit/ltpitt/java-spring-thymeleaf-chat)](https://github.com/ltpitt/java-spring-thymeleaf-chat/commits)
