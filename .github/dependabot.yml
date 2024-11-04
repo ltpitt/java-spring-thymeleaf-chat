@@ -5,5 +5,4 @@ updates:
     schedule:
       interval: "weekly"
     allow:
-      - dependency-type: "direct"
-        release-type: "stable"
+      - release-type: "stable"
